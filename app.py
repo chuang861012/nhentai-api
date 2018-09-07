@@ -1,9 +1,11 @@
 from flask import Flask, jsonify, request,render_template
 from flask_cors import CORS
+from flask_compress import Compress
 from modules.nhentai import search,getBookById
 
 app = Flask(__name__)
 CORS(app)
+Compress(app)
 
 @app.route('/search')
 def searchBooks():
